@@ -8,7 +8,7 @@ pipeline {
 
   stages {
     stage("Test") {
-      agent { //<=== build 1 images/container mới bên trong jenkins chỉ để chạy test
+      agent {
           docker {
             image 'python:3.8-slim-buster'
             args '-u 0:0 -v /tmp:/root/.cache'
