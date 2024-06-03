@@ -1,4 +1,4 @@
-image: nhtua/flask-docker:latest
+image: grandish/flask-docker:latest
 imagePullPolicy: IfNotPresent
 replicaCount: 1
 
