@@ -22,7 +22,7 @@ pipeline {
     }
 
     stage("build") {
-      agent { node {label 'master'}} //<=== build 1 container mới trên chính server
+      agent { node {label 'built-in'}} //<=== build 1 container mới trên chính server
       environment {
         DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
       }
