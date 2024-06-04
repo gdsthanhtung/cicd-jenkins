@@ -25,7 +25,7 @@ pipeline {
       agent { node {label 'built-in'}} //<=== build 1 container mới trên chính server
       environment {
         DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
-        HOME="/home/jenkins"
+        HOME = "${env.WORKSPACE}"
       }
       steps {
         sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
